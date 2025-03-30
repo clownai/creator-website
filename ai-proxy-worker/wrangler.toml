@@ -1,0 +1,9 @@
+name = "ai-proxy-worker"
+main = "src/index.js"
+compatibility_date = "2024-03-30"
+
+[vars]
+GEMINI_API_KEY = ""
+
+[build]
+format = "javascript"
