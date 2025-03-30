@@ -1,0 +1,105 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Define Custom CSS Variables (Easy Customization) */
+:root {
+    --primary-color: #0d6efd; /* Default Bootstrap blue */
+    --secondary-color: #6c757d; /* Default Bootstrap grey */
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --font-family: 'Poppins', sans-serif;
+    --hero-bg-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'); /* Example from Unsplash - Replace! */
+    --hero-overlay-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text visibility */
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure footer sticks to bottom */
+}
+
+main {
+    flex-grow: 1; /* Allow main content to grow and push footer down */
+}
+
+.navbar {
+    border-bottom: 1px solid #eee;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.hero-section {
+    background-image: linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)), var(--hero-bg-image); /* Apply overlay using linear-gradient */
+    background-size: cover;
+    background-position: center center;
+    min-height: 60vh; /* Adjust height as needed */
+    color: #ffffff;
+}
+
+
+.hero-section h1 {
+    font-weight: 700;
+    font-size: 3.5rem; /* Responsive font size */
+}
+
+.hero-section .lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary {
+     background-color: var(--secondary-color);
+     border-color: var(--secondary-color);
+}
+.btn-secondary:hover {
+    opacity: 0.9;
+     background-color: var(--secondary-color);
+     border-color: var(--secondary-color);
+}
+
+
+.portfolio-placeholder-img {
+    height: 200px; /* Adjust height */
+    background-color: #e9ecef; /* Placeholder grey */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    font-style: italic;
+    text-align: center;
+}
+.portfolio-placeholder-img::before {
+    content: "Image Placeholder"; /* Text inside placeholder */
+}
+
+footer {
+    background-color: var(--dark-color);
+}
+
+footer a:hover {
+    color: var(--light-color) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+}
