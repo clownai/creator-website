@@ -45,37 +45,94 @@
 
     <!-- Main Content -->
     <main class="container py-5">
-        <h1 class="text-center mb-4">AI Text Generator</h1>
-        <p class="lead text-center mb-5">Enter a prompt below and click "Generate" to see what the AI comes up with!</p>
+        <h1 class="text-center mb-5">MindSpark AI Playground</h1>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="mb-3">
-                    <label for="promptInput" class="form-label">Your Prompt:</label>
-                    <textarea class="form-control" id="promptInput" rows="3" placeholder="e.g., Write a short poem about a robot discovering music..."></textarea>
-                </div>
-                <div class="text-center mb-3">
-                    <button class="btn btn-primary btn-lg" id="generateButton">
-                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" id="loadingSpinner"></span>
-                        Generate Text
-                    </button>
-                </div>
-                <div class="mb-3">
-                    <label for="outputArea" class="form-label">AI Output:</label>
-                    <textarea class="form-control" id="outputArea" rows="10" readonly placeholder="AI response will appear here..."></textarea>
-                </div>
-                 <!-- Removed the V1 Simulation Note -->
-                 <!-- <div class="text-center text-muted">
-                     <small>Note: This is currently a V1 simulation. Output is pre-defined.</small>
-                 </div> -->
-            </div>
-        </div>
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs justify-content-center mb-4" id="aiToolTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="text-gen-tab" data-bs-toggle="tab" data-bs-target="#text-gen-pane" type="button" role="tab" aria-controls="text-gen-pane" aria-selected="true">
+                    📝 Text Generator
+                </button>
+            </li>
+            <!-- Add more tabs here later -->
+            <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="code-helper-tab" data-bs-toggle="tab" data-bs-target="#code-helper-pane" type="button" role="tab" aria-controls="code-helper-pane" aria-selected="false">
+                    💻 Code Helper
+                </button>
+            </li> -->
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="aiToolTabContent">
+            <!-- Text Generator Pane -->
+            <div class="tab-pane fade show active" id="text-gen-pane" role="tabpanel" aria-labelledby="text-gen-tab" tabindex="0">
+                <h2 class="text-center mb-4 visually-hidden">AI Text Generator</h2> <!-- Hidden H2 for structure -->
+                <p class="lead text-center mb-5">Enter a prompt below and click "Generate" to see what the AI comes up with!</p>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-9"> <!-- Slightly wider column -->
+
+                        <!-- Prompt Area -->
+                        <div class="mb-3">
+                            <label for="promptInput" class="form-label">Your Prompt:</label>
+                            <textarea class="form-control" id="promptInput" rows="4" placeholder="e.g., Write a short story about a curious cat exploring a library at night..."></textarea>
+                            <div class="d-flex justify-content-end mt-2">
+                               <button class="btn btn-sm btn-outline-secondary" id="clearPromptButton">Clear Prompt</button>
+                            </div>
+                        </div>
+
+                        <!-- Example Prompts -->
+                        <div class="mb-3 text-center">
+                            <small class="text-muted me-2">Try an example:</small>
+                            <button class="btn btn-sm btn-light border example-prompt-btn" data-prompt="Write a haiku about a rainy day">Rainy Day Haiku</button>
+                            <button class="btn btn-sm btn-light border example-prompt-btn" data-prompt="Explain the concept of photosynthesis simply">Explain Photosynthesis</button>
+                            <button class="btn btn-sm btn-light border example-prompt-btn" data-prompt="Suggest three creative names for a fantasy tavern">Tavern Names</button>
+                         </div>
+
+                         <!-- Generate Button -->
+                        <div class="text-center mb-3">
+                            <button class="btn btn-primary btn-lg" id="generateButton">
+                                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" id="loadingSpinner"></span>
+                                ✨ Generate Text
+                            </button>
+                        </div>
+
+                        <!-- Output Area -->
+                        <div class="mb-3">
+                            <label for="outputArea" class="form-label">AI Output:</label>
+                            <textarea class="form-control bg-light" id="outputArea" rows="12" readonly placeholder="AI response will appear here..."></textarea>
+                            <div class="d-flex justify-content-between mt-2">
+                                <button class="btn btn-sm btn-outline-secondary" id="copyOutputButton" disabled>Copy Output</button>
+                                <button class="btn btn-sm btn-outline-danger" id="clearOutputButton" disabled>Clear Output</button>
+                            </div>
+                        </div>
+
+                        <!-- Optional: History Section (Added by JS later) -->
+                        <div id="historySection" class="mt-4 d-none">
+                            <h5>Recent History (Last 5)</h5>
+                            <ul class="list-group" id="historyList">
+                                <!-- History items will be added here by JS -->
+                            </ul>
+                             <button class="btn btn-sm btn-outline-warning mt-2" id="clearHistoryButton">Clear History</button>
+                        </div>
+
+                    </div>
+                </div> <!-- End of row -->
+            </div> <!-- End of text-gen-pane -->
+
+            <!-- Add more tab panes here later -->
+            <!-- <div class="tab-pane fade" id="code-helper-pane" role="tabpanel" aria-labelledby="code-helper-tab" tabindex="0">
+                 <h2>Code Helper</h2>
+                 <p>Code helper interface goes here...</p>
+            </div> -->
+
+        </div> <!-- End of tab-content -->
     </main>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 mt-auto">
         <div class="container">
-            <p class="mb-1">© <span id="current-year"></span> MindSpark AI Playground. All Rights Reserved.</p>
+            <p class="mb-1">  MindSpark AI Playground. All Rights Reserved.</p>
             <p class="mb-0">
                 <a href="terms.html" class="text-white-50 mx-2">Terms of Service</a> |
                 <a href="privacy.html" class="text-white-50 mx-2">Privacy Policy</a>

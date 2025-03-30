@@ -94,6 +94,33 @@ footer a:hover {
     color: var(--light-color) !important;
 }
 
+/* --- Playground Enhancements --- */
+
+/* Style for the output area when showing content */
+#outputArea:not(:placeholder-shown) {
+    background-color: var(--light-color); /* Use light background */
+    border-color: #ced4da;
+}
+
+/* Style for error state (optional) */
+#outputArea.is-invalid {
+    border-color: #dc3545; /* Bootstrap danger color */
+}
+
+/* Example prompt buttons */
+.example-prompt-btn {
+    margin: 0.2rem;
+    font-size: 0.85rem;
+}
+
+/* History list item */
+#historyList .list-group-item {
+     transition: background-color 0.2s ease-in-out;
+}
+#historyList .list-group-item:hover {
+    background-color: #f8f9fa; /* Light hover effect */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-section h1 {
