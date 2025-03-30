@@ -130,3 +130,19 @@ footer a:hover {
         font-size: 1.1rem;
     }
 }
+
+/* --- Code Helper Styles --- */
+.code-output-area {
+    min-height: 200px; /* Ensure it has some height */
+    max-height: 500px; /* Prevent excessive height */
+    overflow-y: auto;  /* Allow scrolling for long code */
+    white-space: pre;  /* Preserve whitespace and line breaks */
+    background-color: #f8f9fa; /* Light background for code */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    font-size: 0.9rem;
+}
+
+.code-output-area code {
+     display: block; /* Ensure code takes up block space */
+     color: #212529; /* Dark text color */
+}

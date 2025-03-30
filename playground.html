@@ -54,12 +54,11 @@
                     📝 Text Generator
                 </button>
             </li>
-            <!-- Add more tabs here later -->
-            <!-- <li class="nav-item" role="presentation">
+            <li class="nav-item" role="presentation">
                 <button class="nav-link" id="code-helper-tab" data-bs-toggle="tab" data-bs-target="#code-helper-pane" type="button" role="tab" aria-controls="code-helper-pane" aria-selected="false">
                     💻 Code Helper
                 </button>
-            </li> -->
+            </li>
         </ul>
 
         <!-- Tab Content -->
@@ -120,11 +119,44 @@
                 </div> <!-- End of row -->
             </div> <!-- End of text-gen-pane -->
 
-            <!-- Add more tab panes here later -->
-            <!-- <div class="tab-pane fade" id="code-helper-pane" role="tabpanel" aria-labelledby="code-helper-tab" tabindex="0">
-                 <h2>Code Helper</h2>
-                 <p>Code helper interface goes here...</p>
-            </div> -->
+            <!-- Code Helper Pane -->
+            <div class="tab-pane fade" id="code-helper-pane" role="tabpanel" aria-labelledby="code-helper-tab" tabindex="0">
+                <h2 class="text-center mb-4 visually-hidden">AI Code Helper</h2> <!-- Hidden H2 -->
+                <p class="lead text-center mb-5">Describe the code you need (e.g., language, function) and let the AI assist!</p>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+
+                        <!-- Code Prompt Area -->
+                        <div class="mb-3">
+                            <label for="codePromptInput" class="form-label">Code Request:</label>
+                            <textarea class="form-control" id="codePromptInput" rows="4" placeholder="e.g., Python function to calculate factorial, CSS for a pulsing button..."></textarea>
+                             <div class="d-flex justify-content-end mt-2">
+                               <button class="btn btn-sm btn-outline-secondary" id="clearCodePromptButton">Clear Request</button>
+                            </div>
+                        </div>
+
+                        <!-- Generate Code Button -->
+                        <div class="text-center mb-3">
+                            <button class="btn btn-success btn-lg" id="generateCodeButton"> <!-- Changed color -->
+                                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" id="loadingCodeSpinner"></span>
+                               ⚡ Generate Code
+                            </button>
+                        </div>
+
+                        <!-- Code Output Area -->
+                        <div class="mb-3">
+                            <label for="codeOutputArea" class="form-label">Generated Code:</label>
+                            <!-- Use <pre><code> for code formatting -->
+                            <pre class="code-output-area bg-light p-3 rounded border"><code id="codeOutputArea" class="language-markup">Code will appear here...</code></pre>
+                             <div class="d-flex justify-content-between mt-2">
+                                <button class="btn btn-sm btn-outline-secondary" id="copyCodeOutputButton" disabled>Copy Code</button>
+                                <button class="btn btn-sm btn-outline-danger" id="clearCodeOutputButton" disabled>Clear Code</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End of row -->
+            </div> <!-- End of code-helper-pane -->
 
         </div> <!-- End of tab-content -->
     </main>
