@@ -228,11 +228,11 @@ if (generateButton && promptInput && outputArea && loadingSpinner && copyOutputB
      function escapeHtml(unsafe) {
          if (!unsafe) return '';
          return unsafe
-              .replace(/&/g, "&")
-              .replace(/</g, "<")
-              .replace(/>/g, ">")
-              .replace(/"/g, """)
-              .replace(/'/g, "'");
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+              .replace(/"/g, "&quot;")
+              .replace(/'/g, "&#039;");
      }
 
     // --- Initial Load ---
